@@ -1,0 +1,4 @@
+awk -v date=0 -v up=0 -v max_date=0 -v max=0 '{if($1!=date && up>max){max=up; max_date=date} else if($1!=date){date=$1} else if($1==date){up+=$2}}END{print max_date; print max}' combine_power_meter.txt
+
+cut -d "|" -f 2 emails.log | cut -d " " -f 4,5 | sort | uniq
+
